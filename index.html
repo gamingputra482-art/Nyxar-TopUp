@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>nyxar topup</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+<span>NYXAR STORE</span>
+<span id="navUser"></span>
+</nav>
+
+<div class="container">
+
+<div id="loginPage">
+<h2>Login</h2>
+<input id="username" placeholder="Username">
+<select id="role">
+<option value="user">User</option>
+<option value="admin">Admin</option>
+</select>
+<button onclick="App.login()">Masuk</button>
+</div>
+
+<div id="home" class="hidden">
+<div class="card">
+<div id="userInfo"></div>
+<button onclick="App.topupSaldo()">Top Up Saldo +150.000</button>
+<button onclick="App.showHistory()">Riwayat</button>
+<button onclick="App.showRanking()">Ranking</button>
+<button id="adminBtn" onclick="App.showAdmin()" class="hidden">Admin Panel</button>
+<button onclick="App.logout()">Logout</button>
+</div>
+
+<div class="card">
+<button onclick="App.orderGame('Mobile Legends')">Mobile Legends</button>
+<button onclick="App.orderGame('Free Fire')">Free Fire</button>
+<button onclick="App.orderGame('PUBG')">PUBG</button>
+</div>
+</div>
+
+<div id="historyPage" class="hidden">
+<div id="historyList"></div>
+<button onclick="App.backHome()">Kembali</button>
+</div>
+
+<div id="rankingPage" class="hidden">
+<div id="rankingList"></div>
+<button onclick="App.backHome()">Kembali</button>
+</div>
+
+<div id="adminPage" class="hidden">
+<div id="adminStats"></div>
+<button onclick="App.resetData()">Reset Data</button>
+<button onclick="App.backHome()">Kembali</button>
+</div>
+
+</div>
+
+<script src="api.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
